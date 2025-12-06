@@ -1,0 +1,35 @@
+# .github/workflows/build-presentation.yml
+name: Build presentation PDF
+
+on:
+  push:
+    paths:
+      - 'PRESENTATION.md'
+      - 'assets/**'
+      - '.github/workflows/build-presentation.yml'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Marp CLI
+        run: npm i -g @marp-team/marp-cli
+
+      - name: Build presentation.pdf
+        run: marp --html --allow-local-files -o presentation.pdf PRESENTATION.md
+
+      - name: Commit presentation.pdf
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: 'chore: build presentation.pdf'
+          file_pattern: presentation.pdf
