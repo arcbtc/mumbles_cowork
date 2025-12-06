@@ -34,7 +34,6 @@ color: #e6f0ff
   <img src="5.jpg" alt="Cafe lounge" />
 </div>
 
-> Visuals from the proposed fit-out to anchor the story.
 
 ---
 
