@@ -25,7 +25,7 @@ color: #e6f0ff
 ---
 
 ## Space Preview  
-<code>Bright, coastal interiors with flexible layouts</code>
+<code>Bright, coastal interiors with flexible layout</code>
 
 <div class="gallery">
   <img src="2.jpg" alt="Open workspace" />
